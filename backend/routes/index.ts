@@ -1,6 +1,10 @@
 import { Router } from "@oak/oak";
-import { apiRouter } from "./api/index.ts";
+import { welcomeRouter } from "./api/welcome.ts";
 
 export const router = new Router();
 
-router.use("/api", apiRouter.routes(), apiRouter.allowedMethods());
+router.use(
+  "/api/welcome",
+  welcomeRouter.routes(),
+  welcomeRouter.allowedMethods()
+);
